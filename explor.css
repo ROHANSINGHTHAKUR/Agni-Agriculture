@@ -1,0 +1,289 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #00aaff;
+  color: white;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Controls section */
+#controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  animation: bounceIn 1s ease forwards;
+}
+
+#controls button:hover {
+  background-color: #2980b9;
+}
+
+/* Data display section */
+#dataDisplay {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Weather report section */
+#weatherReport {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#search input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#search button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#search button:hover {
+  background-color: #2980b9;
+}
+
+.weather-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.weather-description {
+  margin-left: 20px;
+}
+
+.weather-info p {
+  margin: 5px 0;
+}
+
+.weather-icon i {
+  font-size: 2em;
+}
+
+.weatherAlert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #ff6347;
+  color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.alert-icon i {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+/* Temperature section */
+#temperatureSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease forwards;
+}
+
+#temperatureSection #toggleUnitBtn {
+  margin-top: 10px;
+}
+
+#temperatureDisplay {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#temperatureValue {
+  font-weight: bold;
+}
+
+#temperatureUnit {
+  font-weight: normal;
+}
+
+#toggleUnitBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  animation: bounce 1s ease forwards;
+}
+
+#toggleUnitBtn:hover {
+  background-color: #2980b9;
+}
+
+/* Crop Field Automation section */
+#cropFieldAutomationSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease forwards;
+  text-align: center;
+}
+
+#cropFieldAutomationSection h1 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+#cropFieldAutomationSection button {
+  padding: 10px 20px;
+  font-size: 16px;
+ 
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#cropFieldAutomationSection button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Checksoilminerals section */
+#Checksoilminerals {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Result display */
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3498db; /* Added color for better visibility */
+}
+
+/* Checksoilminerals section */
+#Checksoilminerals {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#Checksoilminerals button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  animation: bounceIn 1s ease forwards;
+}
+
+#Checksoilminerals button:hover {
+  background-color: #2980b9;
+}
+
+
+/* Animations */
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+ 
+
+  
+
+
+  <title>Soil Health Monitoring App</title>
+  <link rel="stylesheet" href="explor.css">
+</head>
+<section>
+  <header>
+    <h1>Soil Health Monitoring App</h1>
+  </header>
+
+  <section id="controls">
+    <button id="fetchData" onclick="fetchData()">Fetch Data</button>
+    <button id="startMonitoring" onclick="startMonitoring()">Start Monitoring</button>
+  </section>
+
+  <section id="dataDisplay">
+   
+
+    <div id="moistureLevel">Moisture Level: -</div>
+    <div id="humidity">Humidity: -</div>
+    <div id="phLevel">pH Level: -</div>
+    <div id="waterHealth">Water Health: -</div>
+  </section>
+
+  <section id="reports">
+    <h2>Past Water Health Reports</h2>
+    <canvas id="waterHealthChart"></canvas>
+  </section>
+  
+    <section id="weatherReport">
+      <h2> Weather Report</h2>
+      <div id="search">
+     
+
+        <input type="text" id="cityInput" placeholder="Enter a city">
+        <button onclick="searchWeather()">Search</button>
+      </div>
+      <div id="weatherInfo" class="hidden">
+        <h2 id="location"></h2>
+        <div class="weather-details">
+          <div class="weather-icon">
+            <i class="fas fa-sun"></i>
+          </div>
+          <div class="weather-description">
+            <p id="description"></p>
+          </div>
+        </div>
+        <div class="weather-info">
+          <p id="temperature"></p>
+          <p id="humidity"></p>
+          <p id="wind-speed"></p>
+        </div>
+      </div>
+      <div id="weatherAlert" class="hidden">
+        <div class="alert-icon">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="alert-message">
+          <p>Weather Alert: Heavy rain expected.</p>
+        </div>
+      </div>
+    </section>
+  
+    <section id="temperatureSection">
+      <h2>Temperature</h2>
+     
+      <div id="temperatureDisplay">Temperature: <span id="temperatureValue">--</span> <span id="temperatureUnit">°C</span></div>
+      <button onclick="toggleTemperatureUnit()">Toggle Unit</button>
+    </section>
+  
+      <!-- Include necessary libraries -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+      <section id="cropFieldAutomationSection">
+      <h2>Crop Field Automation</h2>
+      <button onclick="startWatering()">Start Watering</button>
+      <button onclick="stopWatering()">Stop Watering</button>
+      
+
+      <div id="moistureLevel">Moisture Level: --%</div>
+      <div id="waterLevel">Water Level: --%</div>
+      </section>
+      <script>
+        function startWatering() {
+          $.get('http://localhost:3000/control?action=start', function(data) {
+            console.log('Watering started');
+          });
+        }
+    
+        function stopWatering() {
+          $.get('http://localhost:3000/control?action=stop', function(data) {
+            console.log('Watering stopped');
+          });
+        }
+    
+        function updateSensorValues() {
+          $.get('http://localhost:3000/sensors', function(data) {
+            const values = JSON.parse(data);
+            $('#moistureLevel').text(`Moisture Level: ${values.moisture}%`);
+            $('#waterLevel').text(`Water Level: ${values.water}%`);
+          });
+        }
+    
+        // Update sensor values every 5 seconds
+        setInterval(updateSensorValues, 5000);
+      </script>
+    
+      <section id="Checksoilminerals">
+        <h2>Check Soil Minerals</h2>
+        <button onclick="checkSoilMinerals()">Check Soil Minerals</button>
+        <div id="result"></div>
+      </section>
+      
+  <script src="chart.js"></script>
+  <script src="explor.js"></script>
+  <script src="weather.js"></script>
+  <script src="temp.js"></script>
+  <script src="menirals.js"></script>
+  
+  
+</body>
+</html>
